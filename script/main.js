@@ -30,24 +30,3 @@ nextbtn.addEventListener('click',() =>{
 
 
 
-// API call to get a random quote
-fetch('https://api.api-ninjas.com/v1/quotes', {
-    method: 'GET',
-    headers: {
-        'X-Api-Key': 'Cg9/EuOivLd4htC/jZ1XPg==RVdRrJZh8vA2FBqB',
-        'Content-Type': 'application/json'
-    }
-})
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (result) {
-        console.log(result);
-        document.getElementById('quote').innerText = `"${result[0].quote}"`;
-        document.getElementById('author').innerText = `—${result[0].author}`;
-    })
-    .catch(function (error) {
-        console.error('Error:', error);
-    });
-
-
